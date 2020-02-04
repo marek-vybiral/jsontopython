@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>JSON to Python</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <style type="text/css">
 	html, body {
@@ -22,11 +25,17 @@
 		display: inline-block;
 		width: 48%;
 		height: 100%;
+	    vertical-align: top;
+	    margin: 5px;
 	}
 
-	#convert-from > div > div > textarea {
+	#convert-from textarea, #convert-from pre {
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
+	}
+
+	#convert-from pre {
+	    border: 1px solid gray;
 	}
 
 
@@ -42,7 +51,7 @@
 			</div>
 			<div>
 				<span>Output (Python)</span>
-				<textarea id="output">{{ output }}</textarea>
+				<pre id="output"><code class="language-python">{{ output }}</code></pre>
 			</div>
 		</div>	
 	</form>

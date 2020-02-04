@@ -2,7 +2,7 @@ import json
 import pprint
 from flask import Flask, request, render_template
 
-from formatter import format_dict
+from formatter import format_data
 
 app = Flask(__name__)
 
@@ -16,7 +16,7 @@ def index():
 
 		try:
 			data = json.loads(input)
-			template_data['output'] = format_dict(data)
+			template_data['output'] = format_data(data)
 		except Exception as e:
 			template_data['output'] = str(e)
 		
