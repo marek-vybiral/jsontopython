@@ -5,7 +5,7 @@ class FormattingException(Exception):
 	...
 
 
-def format_data(input: Union[dict, list]) -> str:
+def format_data(input: Union[str, dict, list, str, float, bool, None]) -> str:
 	return value_to_string(input, depth=-1)
 
 
